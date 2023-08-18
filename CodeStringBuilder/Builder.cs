@@ -9,7 +9,7 @@ namespace CodeStringBuilder;
 /// <summary>
 /// The code string builder main class.
 /// </summary>
-public sealed class Builder
+public sealed partial class Builder
 {
     private readonly StringBuilder buffer;
     private readonly int spacesPerIndentation;
@@ -99,10 +99,10 @@ public sealed class Builder
     /// <summary>
     /// Increase the indentation.
     /// </summary>
-    internal void IncreaseIndentation() => ++this.indentation;
+    private void IncreaseIndentation() => ++this.indentation;
 
     /// <summary>
     /// Decrease the indentation.
     /// </summary>
-    internal void DecreaseIndentation() => --this.indentation;
+    private void DecreaseIndentation() => --this.indentation;
 }
