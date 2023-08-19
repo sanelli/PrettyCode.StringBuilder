@@ -7,8 +7,13 @@ using System.Text;
 namespace CodeStringBuilder;
 
 /// <summary>
-/// The code string builder main class.
+/// The code string builder.
 /// </summary>
+/// <remarks>
+/// Allows creating blocks of code that can be automatically
+/// reverted to their original status using the <c>IDisposable</c>
+/// pattern.
+/// </remarks>
 public sealed partial class Builder
 {
     private readonly StringBuilder buffer;

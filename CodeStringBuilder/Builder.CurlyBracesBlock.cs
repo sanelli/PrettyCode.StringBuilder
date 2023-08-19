@@ -23,15 +23,7 @@ public sealed partial class Builder
     private sealed class CurlyBracesBlockTerminator
         : IDisposable
     {
-        /// <summary>
-        /// The string builder.
-        /// </summary>
         private readonly Builder builder;
-
-        /// <summary>
-        /// <c>true</c> if a semicolon should be added when closing
-        /// the block.
-        /// </summary>
         private readonly bool addSemicolonAfterClose;
 
         /// <summary>

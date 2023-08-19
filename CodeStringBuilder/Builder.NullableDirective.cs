@@ -1,40 +1,37 @@
-// <copyright file="Builder.NullableBlock.cs" company="Stefano Anelli">
+// <copyright file="Builder.NullableDirective.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
 namespace CodeStringBuilder;
 
 /// <content>
-/// Nullable block definition.
+/// Nullable pre-processor directive definition.
 /// </content>
 public sealed partial class Builder
 {
     /// <summary>
-    /// Start a new <c>#nullable</c> block.
+    /// Start a new <c>#nullable</c> directive.
     /// </summary>
     /// <param name="enable"><c>true</c> if nullable should be enabled, <c>false otherwise</c>.</param>
     /// <returns>A disposable object that can be used to go back to previous indentation.</returns>
-    public IDisposable NullableBlock(bool enable)
-        => new NullableBlockTermination(this, enable);
+    public IDisposable NullableDirective(bool enable = true)
+        => new NullableDirectiveTermination(this, enable);
 
     /// <summary>
-    /// Describe a nullability pragma block that will be closed
+    /// Describe a <c>#nullable</c> pragma block that will be restored
     /// using the <see cref="IDisposable"/> pattern.
     /// </summary>
-    private sealed class NullableBlockTermination
+    private sealed class NullableDirectiveTermination
         : IDisposable
     {
-        /// <summary>
-        /// The string builder.
-        /// </summary>
         private readonly Builder builder;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NullableBlockTermination"/> class.
+        /// Initializes a new instance of the <see cref="NullableDirectiveTermination"/> class.
         /// </summary>
         /// <param name="builder">The string builder.</param>
         /// <param name="enable"><c>true</c> if nullable should be enabled, <c>false otherwise</c>.</param>
-        internal NullableBlockTermination(Builder builder, bool enable)
+        internal NullableDirectiveTermination(Builder builder, bool enable)
         {
             this.builder = builder;
             this.builder.AppendLine($"#nullable {(enable ? "enable" : "disable")}");

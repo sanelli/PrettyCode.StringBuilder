@@ -17,14 +17,12 @@ public sealed partial class Builder
         => new IndentTermination(this);
 
     /// <summary>
-    /// Represent an indentation.
+    /// Represent an indentation that will be reverted once the
+    /// block gets disposed.
     /// </summary>
     internal sealed class IndentTermination
         : IDisposable
     {
-        /// <summary>
-        /// The string builder.
-        /// </summary>
         private readonly Builder builder;
 
         /// <summary>
