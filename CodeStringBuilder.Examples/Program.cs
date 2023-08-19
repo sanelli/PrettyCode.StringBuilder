@@ -41,12 +41,11 @@ static string CurlyBracesBlock()
     Console.WriteLine("/*********************************/");
 
     var builder = new CodeStringBuilder.Builder();
-    builder.AppendLine("int main()");
-    using (builder.CurlyBracesBlock())
-    using (builder.Indent())
+    builder.AppendLine("struct cplusplus");
+    using (builder.CurlyBracesBlock(indent: false))
     {
-        builder.AppendLine("std::cout << \"Hello world!\" << std::endl;");
-        builder.AppendLine("return 0;");
+        builder.AppendLine("private:");
+        builder.AppendLine("int foo;");
     }
 
     return builder.ToString();
@@ -61,7 +60,6 @@ static string PragmaWarningDirective()
     var builder = new CodeStringBuilder.Builder();
     builder.AppendLine("try");
     using (builder.CurlyBracesBlock())
-    using (builder.Indent())
     {
         builder.AppendLine("/* Do something */");
     }
@@ -69,7 +67,6 @@ static string PragmaWarningDirective()
     builder.AppendLine("catch (Exception e)");
     using (builder.PragmaWarningDirective(true, "CA2200"))
     using (builder.CurlyBracesBlock())
-    using (builder.Indent())
     {
         builder.AppendLine("throw e;");
     }
