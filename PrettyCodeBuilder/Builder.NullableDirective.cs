@@ -2,7 +2,7 @@
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
-namespace CodeStringBuilder;
+namespace PrettyCode;
 
 /// <content>
 /// Nullable pre-processor directive definition.

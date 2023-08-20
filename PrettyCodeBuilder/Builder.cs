@@ -4,10 +4,10 @@
 
 using System.Text;
 
-namespace CodeStringBuilder;
+namespace PrettyCode;
 
 /// <summary>
-/// The code string builder.
+/// The pretty code builder.
 /// </summary>
 /// <remarks>
 /// Allows creating blocks of code that can be automatically

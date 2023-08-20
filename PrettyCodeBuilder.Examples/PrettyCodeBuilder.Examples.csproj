@@ -8,6 +8,7 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
         <NoWarn>SA0001</NoWarn>
+        <RootNamespace>CodeStringBuilder.Examples</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CodeStringBuilder\CodeStringBuilder.csproj"/>
+        <ProjectReference Include="..\PrettyCodeBuilder\PrettyCodeBuilder.csproj" />
     </ItemGroup>
 
 </Project>

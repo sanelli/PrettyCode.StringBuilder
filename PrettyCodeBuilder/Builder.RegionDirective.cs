@@ -2,7 +2,7 @@
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
-namespace CodeStringBuilder;
+namespace PrettyCode;
 
 /// <content>
 /// Curly braces pre-processor directive definition.
@@ -40,7 +40,7 @@ public sealed partial class Builder
             this.builder = builder;
             regionName = !string.IsNullOrWhiteSpace(regionName) ? $" {regionName.Trim()}" : string.Empty;
             this.builder.AppendLine($"#region{regionName}");
-            this.regionName = string.IsNullOrWhiteSpace(regionName) ? string.Empty : $"// {regionName}";
+            this.regionName = string.IsNullOrWhiteSpace(regionName) ? string.Empty : $" // {regionName}";
         }
 
         /// <inheritdoc />

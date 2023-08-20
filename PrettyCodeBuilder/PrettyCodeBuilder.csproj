@@ -9,18 +9,19 @@
         <LangVersion>latest</LangVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <RootNamespace>PrettyCode</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>CodeStringBuilder</PackageId>
+        <PackageId>PrettyCodeBuilder</PackageId>
         <PackageVersion>0.0.1</PackageVersion>
         <Authors>Stefano Anelli</Authors>
-        <PackageProjectUrl>https://github.com/sanelli/CodeStringBuilder</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/sanelli/CodeStringBuilder.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/sanelli/PrettyCodeBuilder</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sanelli/PrettyCodeBuilder.git</RepositoryUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>Generate nicely indented code.</Description>
         <PackageReleaseNotes>Generated nicely indented code.</PackageReleaseNotes>
-        <PackageTags>Roslyn, code, string, string-builder, indent, source-generator</PackageTags>
+        <PackageTags>Roslyn, code, string, string-builder, indent, source-generator, pretty code</PackageTags>
         <DevelopmentDependency>false</DevelopmentDependency>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -28,7 +29,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="../Documentation/README.md" Pack="true" PackagePath="\"/>
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>
