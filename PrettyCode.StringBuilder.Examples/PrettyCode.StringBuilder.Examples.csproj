@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\PrettyCodeBuilder\PrettyCodeBuilder.csproj" />
+        <ProjectReference Include="..\PrettyCode.StringBuilder\PrettyCode.StringBuilder.csproj" />
     </ItemGroup>
 
 </Project>

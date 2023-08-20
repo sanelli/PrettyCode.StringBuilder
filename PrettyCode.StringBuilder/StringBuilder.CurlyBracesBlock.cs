@@ -1,4 +1,4 @@
-// <copyright file="Builder.CurlyBracesBlock.cs" company="Stefano Anelli">
+// <copyright file="StringBuilder.CurlyBracesBlock.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace PrettyCode;
 /// <content>
 /// Curly braces block definition.
 /// </content>
-public sealed partial class Builder
+public sealed partial class StringBuilder
 {
     /// <summary>
     /// Start a curly braces block.
@@ -24,24 +24,24 @@ public sealed partial class Builder
     private sealed class CurlyBracesBlockTerminator
         : IDisposable
     {
-        private readonly Builder builder;
+        private readonly StringBuilder stringBuilder;
         private readonly bool addSemicolonAfterClose;
         private readonly IDisposable? indentation = null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CurlyBracesBlockTerminator"/> class.
         /// </summary>
-        /// <param name="builder">The string builder.</param>
+        /// <param name="stringBuilder">The string builder.</param>
         /// <param name="addSemicolonAfterClose"><c>true</c> if a semicolon should be added when closing the block.</param>
         /// <param name="indent"><c>true</c> if indentation should be applied between braces.</param>
-        internal CurlyBracesBlockTerminator(Builder builder, bool addSemicolonAfterClose, bool indent)
+        internal CurlyBracesBlockTerminator(StringBuilder stringBuilder, bool addSemicolonAfterClose, bool indent)
         {
-            this.builder = builder;
+            this.stringBuilder = stringBuilder;
             this.addSemicolonAfterClose = addSemicolonAfterClose;
-            this.builder.AppendLine("{");
+            this.stringBuilder.AppendLine("{");
             if (indent)
             {
-                this.indentation = this.builder.Indent();
+                this.indentation = this.stringBuilder.Indent();
             }
         }
 
@@ -49,7 +49,7 @@ public sealed partial class Builder
         public void Dispose()
         {
             this.indentation?.Dispose();
-            this.builder.AppendLine(this.addSemicolonAfterClose ? "};" : "}");
+            this.stringBuilder.AppendLine(this.addSemicolonAfterClose ? "};" : "}");
         }
     }
 }

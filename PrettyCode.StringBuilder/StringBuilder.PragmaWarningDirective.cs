@@ -1,4 +1,4 @@
-// <copyright file="Builder.PragmaWarningDirective.cs" company="Stefano Anelli">
+// <copyright file="StringBuilder.PragmaWarningDirective.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace PrettyCode;
 /// <content>
 /// Pragma warning pre-processor directive definition.
 /// </content>
-public sealed partial class Builder
+public sealed partial class StringBuilder
 {
     /// <summary>
     /// Start a <c>#pragma warning</c> pre-processor directive.
@@ -25,19 +25,19 @@ public sealed partial class Builder
     private sealed class PragmaWarningDirectiveTermination
         : IDisposable
     {
-        private readonly Builder builder;
+        private readonly StringBuilder stringBuilder;
         private readonly bool disable;
         private readonly string[] warnings;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PragmaWarningDirectiveTermination"/> class.
         /// </summary>
-        /// <param name="builder">The string builder.</param>
+        /// <param name="stringBuilder">The string builder.</param>
         /// <param name="disable"><c>true</c> if the warnings should be disabled, <c>false</c> if warnings should be restored.</param>
         /// <param name="warnings">The warnings to disable or restore.</param>
-        internal PragmaWarningDirectiveTermination(Builder builder, bool disable, params string[] warnings)
+        internal PragmaWarningDirectiveTermination(StringBuilder stringBuilder, bool disable, params string[] warnings)
         {
-            this.builder = builder;
+            this.stringBuilder = stringBuilder;
             this.disable = disable;
             this.warnings = warnings;
 
@@ -46,12 +46,12 @@ public sealed partial class Builder
             {
                 foreach (var warning in warnings)
                 {
-                    this.builder.AppendLine($"#pragma warning {disableString} {warning}");
+                    this.stringBuilder.AppendLine($"#pragma warning {disableString} {warning}");
                 }
             }
             else
             {
-                this.builder.AppendLine($"#pragma warning {disableString}");
+                this.stringBuilder.AppendLine($"#pragma warning {disableString}");
             }
         }
 
@@ -63,12 +63,12 @@ public sealed partial class Builder
             {
                 foreach (var warning in this.warnings)
                 {
-                    this.builder.AppendLine($"#pragma warning {restoreString} {warning}");
+                    this.stringBuilder.AppendLine($"#pragma warning {restoreString} {warning}");
                 }
             }
             else
             {
-                this.builder.AppendLine($"#pragma warning {restoreString}");
+                this.stringBuilder.AppendLine($"#pragma warning {restoreString}");
             }
         }
     }

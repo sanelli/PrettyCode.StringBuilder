@@ -1,4 +1,4 @@
-# Pretty Code Builder
+# Pretty Code String Builder
 String builder wrapper that helps in generating pretty code.
 Supported features are:
 - Indentation;
@@ -15,7 +15,7 @@ pattern.
 
 ### Indent blocks
 ```csharp
-var builder = new PrettyCode.Builder();
+var builder = new PrettyCode.StringBuilder();
 builder.AppendLine("def main():");
 using (builder.Indent())
 {
@@ -35,7 +35,7 @@ def main():
 
 ### Curly braces block
 ```csharp
-var builder = new PrettyCode.Builder();
+var builder = new PrettyCode.StringBuilder();
 builder.AppendLine("struct cplusplus");
 using (builder.CurlyBracesBlock(indent: false))
 {
@@ -57,7 +57,7 @@ int foo;
 
 ### Pragma warning directive
 ```csharp
-var builder = new PrettyCode.Builder();
+var builder = new PrettyCode.StringBuilder();
 builder.AppendLine("try");
 using (builder.CurlyBracesBlock())
 {
@@ -90,7 +90,7 @@ catch (Exception e)
 
 ### Nullable directive
 ```csharp
-var builder = new PrettyCode.Builder();
+var builder = new PrettyCode.StringBuilder();
 using (builder.NullableDirective())
 {
     builder.AppendLine("int? foo = null;");
@@ -108,7 +108,7 @@ int? foo = null;
 
 ### Region directive
 ```csharp
-var builder = new PrettyCode.Builder();
+var builder = new PrettyCode.StringBuilder();
 using (builder.RegionDirective("My class"))
 {
     builder.AppendLine("class MyClass { }");

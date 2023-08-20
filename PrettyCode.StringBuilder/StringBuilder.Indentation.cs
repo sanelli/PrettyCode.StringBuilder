@@ -1,4 +1,4 @@
-// <copyright file="Builder.Indentation.cs" company="Stefano Anelli">
+// <copyright file="StringBuilder.Indentation.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace PrettyCode;
 /// <content>
 /// Indentation definition.
 /// </content>
-public sealed partial class Builder
+public sealed partial class StringBuilder
 {
     /// <summary>
     /// Start a new indented block.
@@ -23,22 +23,22 @@ public sealed partial class Builder
     internal sealed class IndentTermination
         : IDisposable
     {
-        private readonly Builder builder;
+        private readonly StringBuilder stringBuilder;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IndentTermination"/> class.
         /// </summary>
-        /// <param name="builder">The indentation object.</param>
-        internal IndentTermination(Builder builder)
+        /// <param name="stringBuilder">The indentation object.</param>
+        internal IndentTermination(StringBuilder stringBuilder)
         {
-            this.builder = builder;
-            this.builder.IncreaseIndentation();
+            this.stringBuilder = stringBuilder;
+            this.stringBuilder.IncreaseIndentation();
         }
 
         /// <inheritdoc />
         public void Dispose()
         {
-            this.builder.DecreaseIndentation();
+            this.stringBuilder.DecreaseIndentation();
         }
     }
 }

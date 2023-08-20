@@ -1,4 +1,4 @@
-// <copyright file="Builder.NullableDirective.cs" company="Stefano Anelli">
+// <copyright file="StringBuilder.NullableDirective.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace PrettyCode;
 /// <content>
 /// Nullable pre-processor directive definition.
 /// </content>
-public sealed partial class Builder
+public sealed partial class StringBuilder
 {
     /// <summary>
     /// Start a new <c>#nullable</c> directive.
@@ -24,23 +24,23 @@ public sealed partial class Builder
     private sealed class NullableDirectiveTermination
         : IDisposable
     {
-        private readonly Builder builder;
+        private readonly StringBuilder stringBuilder;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NullableDirectiveTermination"/> class.
         /// </summary>
-        /// <param name="builder">The string builder.</param>
+        /// <param name="stringBuilder">The string builder.</param>
         /// <param name="enable"><c>true</c> if nullable should be enabled, <c>false otherwise</c>.</param>
-        internal NullableDirectiveTermination(Builder builder, bool enable)
+        internal NullableDirectiveTermination(StringBuilder stringBuilder, bool enable)
         {
-            this.builder = builder;
-            this.builder.AppendLine($"#nullable {(enable ? "enable" : "disable")}");
+            this.stringBuilder = stringBuilder;
+            this.stringBuilder.AppendLine($"#nullable {(enable ? "enable" : "disable")}");
         }
 
         /// <inheritdoc />
         public void Dispose()
         {
-            this.builder.AppendLine("#nullable restore");
+            this.stringBuilder.AppendLine("#nullable restore");
         }
     }
 }

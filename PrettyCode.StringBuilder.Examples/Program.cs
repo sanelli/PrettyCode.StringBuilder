@@ -2,9 +2,9 @@
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
-Console.WriteLine("==================================");
-Console.WriteLine("=== PrettyCodeBuilder.Examples ===");
-Console.WriteLine("==================================");
+Console.WriteLine("=========================================");
+Console.WriteLine("=== PrettyCode.StringBuilder.Examples ===");
+Console.WriteLine("=========================================");
 Console.WriteLine();
 
 Console.WriteLine(BuildIndentedCode());
@@ -30,7 +30,7 @@ static string BuildIndentedCode()
     Console.WriteLine("/* Indented block                */");
     Console.WriteLine("/*********************************/");
 
-    var builder = new PrettyCode.Builder();
+    var builder = new PrettyCode.StringBuilder();
     builder.AppendLine("def main():");
     using (builder.Indent())
     {
@@ -47,7 +47,7 @@ static string CurlyBracesBlock()
     Console.WriteLine("/* Curly braces block            */");
     Console.WriteLine("/*********************************/");
 
-    var builder = new PrettyCode.Builder();
+    var builder = new PrettyCode.StringBuilder();
     builder.AppendLine("struct cplusplus");
     using (builder.CurlyBracesBlock(indent: false))
     {
@@ -64,7 +64,7 @@ static string PragmaWarningDirective()
     Console.WriteLine("/* Pragma warning directive      */");
     Console.WriteLine("/*********************************/");
 
-    var builder = new PrettyCode.Builder();
+    var builder = new PrettyCode.StringBuilder();
     builder.AppendLine("try");
     using (builder.CurlyBracesBlock())
     {
@@ -87,7 +87,7 @@ static string NullableDirective()
     Console.WriteLine("/* Nullable directive            */");
     Console.WriteLine("/*********************************/");
 
-    var builder = new PrettyCode.Builder();
+    var builder = new PrettyCode.StringBuilder();
     using (builder.NullableDirective())
     {
         builder.AppendLine("int? foo = null");
@@ -102,7 +102,7 @@ static string RegionDirective()
     Console.WriteLine("/* Region directive              */");
     Console.WriteLine("/*********************************/");
 
-    var builder = new PrettyCode.Builder();
+    var builder = new PrettyCode.StringBuilder();
     using (builder.RegionDirective("My class"))
     {
         builder.AppendLine("class MyClass { }");

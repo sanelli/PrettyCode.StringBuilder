@@ -1,4 +1,4 @@
-// <copyright file="Builder.RegionDirective.cs" company="Stefano Anelli">
+// <copyright file="StringBuilder.RegionDirective.cs" company="Stefano Anelli">
 // Copyright (c) Stefano Anelli. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace PrettyCode;
 /// <content>
 /// Curly braces pre-processor directive definition.
 /// </content>
-public sealed partial class Builder
+public sealed partial class StringBuilder
 {
     /// <summary>
     /// Start a region block.
@@ -26,27 +26,27 @@ public sealed partial class Builder
         /// <summary>
         /// The string builder.
         /// </summary>
-        private readonly Builder builder;
+        private readonly StringBuilder stringBuilder;
 
         private readonly string regionName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RegionDirectiveTerminator"/> class.
         /// </summary>
-        /// <param name="builder">The string builder.</param>
+        /// <param name="stringBuilder">The string builder.</param>
         /// <param name="regionName">The optional name of the region.</param>
-        internal RegionDirectiveTerminator(Builder builder, string regionName)
+        internal RegionDirectiveTerminator(StringBuilder stringBuilder, string regionName)
         {
-            this.builder = builder;
+            this.stringBuilder = stringBuilder;
             regionName = !string.IsNullOrWhiteSpace(regionName) ? $" {regionName.Trim()}" : string.Empty;
-            this.builder.AppendLine($"#region{regionName}");
+            this.stringBuilder.AppendLine($"#region{regionName}");
             this.regionName = string.IsNullOrWhiteSpace(regionName) ? string.Empty : $" // {regionName}";
         }
 
         /// <inheritdoc />
         public void Dispose()
         {
-            this.builder.AppendLine($"#endregion{this.regionName}");
+            this.stringBuilder.AppendLine($"#endregion{this.regionName}");
         }
     }
 }
