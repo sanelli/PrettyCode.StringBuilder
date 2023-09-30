@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		README.md = README.md
 		stylecop.json = stylecop.json
+		CODEOWNERS = CODEOWNERS
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyCode.StringBuilder.Examples", "PrettyCode.StringBuilder.Examples\PrettyCode.StringBuilder.Examples.csproj", "{928B1EF9-EDF1-4A88-9140-1046C2F335EC}"
@@ -21,6 +22,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{44A89A22-E5DC-4238-99EB-7280E1D1C099}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\RunTests.ps1 = Scripts\RunTests.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{110F0C37-A463-48C4-9232-AC2BE75B3AEF}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\merge_and_pull_requests.yml = .github\workflows\merge_and_pull_requests.yml
+		.github\workflows\push_nuget.yml = .github\workflows\push_nuget.yml
 	EndProjectSection
 EndProject
 Global

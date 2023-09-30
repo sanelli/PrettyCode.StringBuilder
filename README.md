@@ -65,7 +65,7 @@ using (builder.CurlyBracesBlock())
 }
 
 builder.AppendLine("catch (Exception e)");
-using (builder.PragmaWarningDirective(true, "CA2200"))
+using (builder.PragmaWarningDirective("CA2200"))
 using (builder.CurlyBracesBlock())
 {
     builder.AppendLine("throw e;");

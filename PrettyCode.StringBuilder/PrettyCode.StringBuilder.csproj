@@ -14,10 +14,10 @@
 
     <PropertyGroup>
         <PackageId>PrettyCode.StringBuilder</PackageId>
-        <PackageVersion>0.0.1</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <Authors>Stefano Anelli</Authors>
-        <PackageProjectUrl>https://github.com/sanelli/PrettyCodeBuilder</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/sanelli/PrettyCodeBuilder.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/sanelli/PrettyCode.StringBuilder</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sanelli/PrettyCode.StringBuilder.git</RepositoryUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>Generate nicely indented code.</Description>
         <PackageReleaseNotes>Generates nicely indented code and code blocks.</PackageReleaseNotes>
