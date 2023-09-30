@@ -20,7 +20,7 @@
         <RepositoryUrl>https://github.com/sanelli/PrettyCodeBuilder.git</RepositoryUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>Generate nicely indented code.</Description>
-        <PackageReleaseNotes>Generated nicely indented code.</PackageReleaseNotes>
+        <PackageReleaseNotes>Generates nicely indented code and code blocks.</PackageReleaseNotes>
         <PackageTags>Roslyn, code, string, string-builder, indent, source-generator, pretty code</PackageTags>
         <DevelopmentDependency>false</DevelopmentDependency>
         <PackageReadmeFile>README.md</PackageReadmeFile>
