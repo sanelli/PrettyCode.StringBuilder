@@ -18,6 +18,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyCode.StringBuilder.Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyCode.StringBuilder.Tests", "PrettyCode.StringBuilder.Tests\PrettyCode.StringBuilder.Tests.csproj", "{E872E512-322D-49B9-AB52-8694E8E0D963}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{44A89A22-E5DC-4238-99EB-7280E1D1C099}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\RunTests.ps1 = Scripts\RunTests.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
